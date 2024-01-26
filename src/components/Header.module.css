@@ -1,0 +1,12 @@
+.header{
+    background: white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+
+}
+
+.header img{
+    height: 2rem;
+}
