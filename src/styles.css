@@ -2,7 +2,12 @@
     --white: white;
     --fundo: #E5E5E5;
     --fonte: black;
+    --cinza-escuro: #4d4b48;
     --detalhe: #FAB005;
+ }
+ :focus{
+   outline: transparent;
+   box-shadow: 0 0 0 2px var(--detalhe);
  }
  *{
     margin: 0;
