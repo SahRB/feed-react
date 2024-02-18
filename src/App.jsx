@@ -26,8 +26,8 @@ const posts =[
   {
       id: 2,
       author: {
-          avatarUrl: 'https://github.com/SahRB.png',
-          name: 'Qualquer pessoa',
+          avatarUrl: 'https://uploads.metropoles.com/wp-content/uploads/2023/07/17124030/F1K-cdbXwAgovdo-1.jpg',
+          name: 'Maria Joana',
           role: 'Software Developer'
       },
       content: [
