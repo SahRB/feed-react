@@ -64,10 +64,10 @@
     background: transparent;
     border: 0;
     cursor: pointer;
-  
+    color: var(--cinza-escuro);
     display: flex;
     align-items: center;
-  
+    gap: 2.5px;
     border-radius: 2px;
   }
   
