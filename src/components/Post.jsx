@@ -10,6 +10,7 @@ export function Post({ author, publishedAt, content }) {
     'Muito bacana!'
   ]);
 
+  //armazena em tempo real tudo que é digitado dentro da textarea
   const [newCommentText, setNewCommentText] = useState('')
 
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", { locale: ptBR });
@@ -23,6 +24,7 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function handleNewCommentChange(){
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
     
   }
@@ -31,7 +33,12 @@ export function Post({ author, publishedAt, content }) {
     setComments(updatedComments);
     console.log('deletar');
   }
+  function handleNewCommentInvalid(){
+    event.target.setCustomValidity('Essse campo é obrigatório');
+
+  }
   
+  const isNewCommentEmpty = newCommentText.length === 0;
   return (
     <article className={styles.post}>
       <header>
@@ -58,9 +65,12 @@ export function Post({ author, publishedAt, content }) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea name="comment" placeholder="Deixe seu comentário" 
-        value={newCommentText} onChange={handleNewCommentChange} />
+        value={newCommentText} onChange={handleNewCommentChange} 
+        onInvalid={handleNewCommentInvalid}
+        required
+        />
         <footer>
-          <button type="submit">Postar</button>
+        <button type="submit" disabled={isNewCommentEmpty}> publicar </button>
         </footer>
       </form>
       <div className={styles.commentList}>
